@@ -1,0 +1,72 @@
+# view AndroidManifest.xml #generated:94
+-keep class com.google.zxing.client.android.core.CaptureActivity { <init>(...); }
+
+# view res/layout/qrcode_capture.xml #generated:25
+-keep class com.google.zxing.client.android.core.ViewfinderView { <init>(...); }
+
+# view AndroidManifest.xml #generated:59
+-keep class com.mcnc.hsmart.configuration.view.NetworkConfigurationActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:10
+-keep class com.mcnc.hsmart.download.DownloadServiceImpl { <init>(...); }
+
+# view AndroidManifest.xml #generated:86
+-keep class com.mcnc.hsmart.imageViewer.ImageViewer { <init>(...); }
+
+# view AndroidManifest.xml #generated:76
+-keep class com.mcnc.hsmart.nativeApp.signature.SignatureActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:89
+-keep class com.mcnc.hsmart.potal.DeviceRegistActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:16
+-keep class com.mcnc.hsmart.upload.UploadServiceImpl { <init>(...); }
+
+# view AndroidManifest.xml #generated:137
+-keep class com.mcnc.hsmart.util.SessionTimeoutReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:80
+-keep class com.mcnc.hsmart.view.DownloadListActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:62
+-keep class com.mcnc.hsmart.view.ImageViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:72
+-keep class com.mcnc.hsmart.view.PopupViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:131
+-keep class com.mcnc.parecis.bizmob.configuration.provider.LocalFileProviderImp { <init>(...); }
+
+# view AndroidManifest.xml #generated:6
+-keep class com.mcnc.parecis.bizmob.controller.ImpProcessController { <init>(...); }
+
+# view AndroidManifest.xml #generated:46
+-keep class com.mcnc.parecis.bizmob.nativeView.browser.InternalBrowserActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:143
+-keep class com.mcnc.parecis.bizmob.project.push.PushReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:31
+-keep class com.mcnc.parecis.bizmob.view.DummyActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:30
+-keep class com.mcnc.parecis.bizmob.view.ForegroundService { <init>(...); }
+
+# view AndroidManifest.xml #generated:39
+-keep class com.mcnc.parecis.bizmob.view.ImpHomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:22
+-keep class com.mcnc.parecis.bizmob.view.ImpLoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:43
+-keep class com.mcnc.parecis.bizmob.view.ImpMainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:65
+-keep class com.mcnc.parecis.bizmob.view.PopupViewActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:56
+-keep class com.mcnc.parecis.bizmob.view.TabHomeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:53
+-keep class com.mcnc.parecis.bizmob.view.TabMainActivity { <init>(...); }
+
