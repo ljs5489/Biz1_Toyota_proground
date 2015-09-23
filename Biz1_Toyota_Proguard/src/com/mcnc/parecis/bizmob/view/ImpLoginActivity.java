@@ -53,8 +53,10 @@ import com.mcnc.parecis.bizmob.def.Def;
 import com.mcnc.parecis.bizmob.def.TaskID;
 import com.mcnc.parecis.bizmob.util.ProjectUtils;
 
+
 public class ImpLoginActivity extends ImpMainActivity {
-	private final String START_PAGE = "login/html/login.html";
+	private final String START_PAGE = "login/html/login.html";	
+	//C:\Users\LG\git\Biz1_Toyota_proground2\Biz1_Toyota_Proguard\assets\WebContent\contents\views\login.html
 	private final String TAG = this.toString();
 
 	private Context mContext;
@@ -145,8 +147,7 @@ public class ImpLoginActivity extends ImpMainActivity {
 		Def.TRCODE_LOGIN = "LOGIN";
 		Def.IMAGE_ROOT = "http://10.1.209.134:8111/TFS_Mobile_app";
 		
-		if( Def.IS_RELEASE ) {
-			
+		if( Def.IS_RELEASE ) {			
 			Def.ROOT_URL_IP = "tfskr.com";	
 			Def.ROOT_URL_PORT = "443";
 			Def.ROOT_URL_DIR = "bizmob";	
@@ -352,6 +353,7 @@ public class ImpLoginActivity extends ImpMainActivity {
 
 	@Override
 	public void onBackPressed() {
+		//백버튼 눌렀을때...
 		if ( back_action.length() > 0 ){
 			Logger.d (TAG, "javascript:back_action()");
 			webView.loadUrl("javascript:"+back_action+"()");
@@ -415,6 +417,7 @@ public class ImpLoginActivity extends ImpMainActivity {
 		intent2.putExtra("dataKey", "");
 		AppConfigReader.LoadAppConfig ( this, APP_CONFIG );
 		String url = ImageWrappter.getUri(START_PAGE);
+		//위에서 설정한 놈을 셋팅
 		if (AppConfig.START_PAGE != null && AppConfig.START_PAGE.length() > 0 ) {
 			url = ImageWrappter.getUri( AppConfig.START_PAGE);
 		}

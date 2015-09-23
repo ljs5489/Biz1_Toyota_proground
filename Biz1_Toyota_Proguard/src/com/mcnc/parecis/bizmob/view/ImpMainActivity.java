@@ -156,6 +156,7 @@ public class ImpMainActivity extends MainActivity {
 	
 	@Override
 	public void onDestroy() {
+		//화면이 파괴될때
 		if (webView != null && webView.getUrl() != null) {
 			
 //			webView.clearCache(false);
