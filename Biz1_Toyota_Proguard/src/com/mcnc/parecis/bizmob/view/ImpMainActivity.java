@@ -1,5 +1,6 @@
 package com.mcnc.parecis.bizmob.view;
 
+
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
@@ -8,6 +9,7 @@ import java.util.HashMap;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -43,10 +45,6 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
-
-
-
-
 import com.mcnc.hsmart.configuration.view.NetworkConfigurationActivity;
 import com.mcnc.hsmart.controller.Smart2ProcessController;
 import com.mcnc.hsmart.core.common.Request;
@@ -75,6 +73,11 @@ import com.mcnc.parecis.bizmob.util.ProjectUtils;
 import com.mcnc.parecis.bizmob.view.menu.QuickAction;
 import com.mcnc.parecis.toyota.R;
 import com.phonegap.WebViewReflect;
+
+
+import util.DB;
+
+
 
 /**
  * MailActivity
@@ -178,6 +181,10 @@ public class ImpMainActivity extends MainActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		Toast.makeText(ImpMainActivity.this, "Okay, It is good!", Toast.LENGTH_SHORT).show();
+		
+		DB test = new DB();
+		
+		
 		return true;
 	}
 	

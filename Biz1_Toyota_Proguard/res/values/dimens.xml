@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
 
-    <!--  QRCODE 관련 -->
+    <!-- QRCODE 관련 -->
     <dimen name="standard_padding">8dip</dimen>
     <dimen name="half_padding">4dip</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 
 </resources>

@@ -55,6 +55,7 @@ import com.mcnc.parecis.bizmob.configuration.provider.LocalFileProviderImp;
 import com.mcnc.parecis.bizmob.def.Def;
 import com.mcnc.parecis.bizmob.def.TaskID;
 import com.mcnc.parecis.bizmob.util.ProjectUtils;
+import com.mcnc.parecis.toyota.PrintList;
 import com.mcnc.parecis.toyota.R;
 
 
@@ -99,13 +100,16 @@ public class ImpLoginActivity extends ImpMainActivity {
 			if (keyCode == KeyEvent.KEYCODE_MENU) {
 				
 				Toast.makeText(ImpLoginActivity.this, "Okay, It works.", Toast.LENGTH_SHORT).show();
-				
-				Logger.d(TAG, "onKeyDown MENU");
-				Intent intent2 = new Intent(this, NetworkConfigurationActivity.class);
-				//NetworkConfigurationActivity는 막혀있음!
-				
-				intent2.putExtra("isDev", true);
-				startActivityForResult(intent2, REQUEST_CODE_CONFIGURATION);
+				Intent printList = new Intent(ImpLoginActivity.this, PrintList.class);
+				startActivity(printList);            		
+        
+				/*
+					Logger.d(TAG, "onKeyDown MENU");				
+					Intent intent2 = new Intent(this, NetworkConfigurationActivity.class);				
+					//NetworkConfigurationActivity는 막혀있음!			
+					intent2.putExtra("isDev", true);
+					startActivityForResult(intent2, REQUEST_CODE_CONFIGURATION);
+				*/
 			}
 		}	
 		
