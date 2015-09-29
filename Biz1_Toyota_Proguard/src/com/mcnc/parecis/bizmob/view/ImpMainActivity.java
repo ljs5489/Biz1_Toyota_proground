@@ -22,6 +22,7 @@ import android.speech.RecognizerIntent;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
@@ -45,6 +46,8 @@ import android.widget.Toast;
 
 
 
+
+import com.mcnc.hsmart.configuration.view.NetworkConfigurationActivity;
 import com.mcnc.hsmart.controller.Smart2ProcessController;
 import com.mcnc.hsmart.core.common.Request;
 import com.mcnc.hsmart.core.common.Response;
@@ -169,6 +172,25 @@ public class ImpMainActivity extends MainActivity {
 			Toast.makeText(ImpMainActivity.this, "Hello world123", Toast.LENGTH_SHORT).show();
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	//----------------------------------------------------------------------------
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		Toast.makeText(ImpMainActivity.this, "Okay, It is good!", Toast.LENGTH_SHORT).show();
+		return true;
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		/*
+		if ( ! Def.IS_RELEASE ) {
+			if (keyCode == KeyEvent.KEYCODE_MENU) {				
+				
+			}
+		}	
+		*/
+		return super.onKeyDown(keyCode, event);	
 	}
 	//!here======================================================================
 	
@@ -1540,11 +1562,7 @@ public class ImpMainActivity extends MainActivity {
 	public JSONObject getImageInfo ( Uri selPhotoUri ) {
 		return super.getImageInfo(selPhotoUri);
 	}
-	
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		return super.onKeyDown(keyCode, event);
-	}
+
 	
 	protected boolean checkButtonAction ( View view ){
 		boolean bResult = true;

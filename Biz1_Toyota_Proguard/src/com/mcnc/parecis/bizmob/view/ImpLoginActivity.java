@@ -18,6 +18,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -84,18 +85,32 @@ public class ImpLoginActivity extends ImpMainActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	//----------------------------------------------------------------------------
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
 	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		
 		if ( ! Def.IS_RELEASE ) {
 			if (keyCode == KeyEvent.KEYCODE_MENU) {
+				
+				Toast.makeText(ImpLoginActivity.this, "Okay, It works.", Toast.LENGTH_SHORT).show();
+				
 				Logger.d(TAG, "onKeyDown MENU");
 				Intent intent2 = new Intent(this, NetworkConfigurationActivity.class);
+				//NetworkConfigurationActivity는 막혀있음!
+				
 				intent2.putExtra("isDev", true);
 				startActivityForResult(intent2, REQUEST_CODE_CONFIGURATION);
 			}
-		}
+		}	
+		
 		return super.onKeyDown(keyCode, event);
+	
 	}
 	//!here======================================================================
 	
