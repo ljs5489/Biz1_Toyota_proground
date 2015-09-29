@@ -1,0 +1,9 @@
+{
+    "body": {
+        "device_id" : "",
+        "user_temp_passwd" : "",
+        "user_changed_passwd" : "",
+        "user_id" : ""
+    },
+    "header": "@ToyotaHeader"
+}

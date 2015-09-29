@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<script src="resources/bizMOB/lib/jquery-1.9.0.min.js"></script>
+
+
+<script>
+	function gos() {
+		$('#mbtn').animate({
+			top : '1'
+		}, 1);
+		$('#mbtn').animate({
+			top : '0'
+		}, 1);
+		$('#mbtn img').animate({
+			width : '101%'
+		}, 1);
+		$('#mbtn img').animate({
+			width : '100%'
+		}, 1);
+		setInterval("gol()", 1500);
+	}
+	function gol() {
+		location.href = "estimate.html";
+	}
+
+	$(function() {
+		$('#mbtn').click(function() {
+			setInterval("gos()", 10);
+			$('#mbtn img').attr({
+				src : "../images/btn/main_o.png"
+			});
+		});
+
+	});
+</script>
+
+
+</head>
+
+<body>
+	<div id="skipNavi">
+		<strong class="hidden">Skip menu</strong><a href="#content">Skip
+			to content</a>
+	</div>
+	<div id="wrap">
+		<!-- header -->
+		<div id="header">
+			<a href="#n" class="logo_m"> <img src="logo_l.png" alt=""
+				id="img_logo"> <!-- 렉서스:logo_l.png, 도요타:logo_t.png -->
+			</a> <a href="#n" class="tfs_m"> <img src="../images/tfs.png"
+				alt="TFS MOBILE">
+			</a>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div id="content">
+				<!-- 내용 -->
+				<div class="mbtn">
+					<a id="mbtn"> <img src="../images/btn/main.png">
+					</a>
+				</div>
+
+				<!-- //내용 -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer"></div>
+
+
+		<div class="fix_b">
+			<div class="gnb">
+				<ul>
+					<li id="btn_goEstimateList"><a href="estimateView.html"> <img
+							src="../images/btn/g1.png" alt="견적조회">
+					</a></li>
+					<li id="btn_goMyInfo"><a href="userInfo.html"> <img src="../images/btn/g2.png"
+							alt="나의정보">
+					</a></li>
+					<li id="btn_goStatistic"><a href="statistic.html"> <img
+							src="../images/btn/g3.png" alt="통계관리">
+					</a></li>
+				</ul>
+			</div>
+
+
+
+
+			<div class="appf">
+				<img src="toolbar/btn_menu1.png" onclick="location.href='login.html'" />
+				<img src="toolbar/btn_menu2.png" onclick="history.back()" /> <img
+					style="float: right;" src="toolbar/btn_menu4.png" onclick="location.href='setting.html'"/> 
+					<img style="float: right;" src="toolbar/btn_menu3.png" />
+			</div>
+
+		</div>
+
+		<!-- //footer -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<title>제목</title>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<script src="../bizMOB/lib/jquery-1.9.0.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script>
+	$(function(){
+		$("#testPrint").click(function(){
+			location.href="main.html";
+			window.TfskrApp.printMyDoc($("#inp_userId").val(), $("#inp_userPwd").val());
+			
+		});
+			
+			
+	});
+	</script>
+
+<style>
+html {
+	position: absolute;
+	overflow: hidden;
+}
+
+body {
+	width: 100%;
+	hright: 100%;
+	overflow: hidden;
+}
+</style>
+<script>
+		$("html").width(device.width);
+		$("html").height(deivce.height);
+	</script>
+
+</head>
+<body>
+	<div id="skipNavi">
+		<strong class="hidden">Skip menu</strong> <a href="#content">Skip
+			to content</a>
+	</div>
+	<div id="wrap" style="padding-top: 60px;">
+		<!-- header -->
+		<div id="header">
+			<div style="margin: 0px;" class="logo">
+				<img id="img_logo_L" src="../images/logo.png" alt=""
+					style="display: visibility;">
+				<!-- 렉서스 -->
+				<img id="img_logo_T" src="../images/logo2.png" alt=""
+					style="display: none;">
+				<!-- 도요타 -->
+			</div>
+		</div>
+		<!-- //header -->
+
+		<!-- container -->
+		<div id="container">
+			<div id="content">
+				<!-- 내용 -->
+				<div class="mf">
+					<div class="tw" id="loginContent">
+						<fieldset>
+							<table>
+								<caption>로그인폼</caption>
+								<tr>
+									<td><input type="text" id="inp_userId" title="아이디"
+										placeholder="아이디" value="test123"></td>
+									<td rowspan="2" id="btn_login"><input id="testPrint"
+										type="image" src="../images/btn/login.png" class="btn_login"></td>
+								</tr>
+								<tr>
+									<td><input type="password" id="inp_userPwd" title="비밀번호"
+										placeholder="비밀번호" value="hello"></td>
+								</tr>
+								<tr>
+									<td class="id_save"><label><input type="checkbox"
+											id="checkUserId" /> 아이디저장</label></td>
+								</tr>
+							</table>
+						</fieldset>
+					</div>
+				</div>
+				<div class="info">
+					<p>TELEPHONE INQUIRY</p>
+					<p>02-2192-6095</p>
+				</div>
+				<!-- //내용 -->
+			</div>
+		</div>
+		<!-- //container -->
+
+		<!-- footer -->
+		<div id="footer">
+			<address>
+				COPYRIGHT 2013 BY TOYOTA KOREA CO. <br>ALL RIGHTS RESERVED
+			</address>
+		</div>
+		<div class="change_btn" id="btn_transLogo" style="display: none;">
+			<button>전환버튼</button>
+		</div>
+		<!-- //footer -->
+	</div>
+</body>
+
+</html>

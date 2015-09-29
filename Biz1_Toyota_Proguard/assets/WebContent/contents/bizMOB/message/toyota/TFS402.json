@@ -1,0 +1,11 @@
+{
+    "body": {
+    	"brand_code" : "",
+    	"sch_end_rank" : "",
+    	"sch_start_rank" : "",
+    	"user_id" : "",
+    	"sch_end_date" : "",
+        "sch_start_date" : ""
+    },
+    "header": "@ToyotaHeader"
+}

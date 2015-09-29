@@ -18,11 +18,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 import android.widget.LinearLayout.LayoutParams;
 
 import com.mcnc.hsmart.configuration.model.ConfigurationModel;
@@ -52,6 +54,7 @@ import com.mcnc.parecis.bizmob.configuration.provider.LocalFileProviderImp;
 import com.mcnc.parecis.bizmob.def.Def;
 import com.mcnc.parecis.bizmob.def.TaskID;
 import com.mcnc.parecis.bizmob.util.ProjectUtils;
+import com.mcnc.parecis.toyota.R;
 
 
 public class ImpLoginActivity extends ImpMainActivity {
@@ -67,6 +70,34 @@ public class ImpLoginActivity extends ImpMainActivity {
 	private final String APP_CONFIG = "bizMOB/config/app/app.config";
 	private final int REQUEST_CODE_CONFIGURATION = 100;
 	private final int REQUEST_CODE_DEVICE_REGIST = 1020;
+	
+	
+	
+	//here======================================================================
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {			
+			Toast.makeText(ImpLoginActivity.this, "Hello world!", Toast.LENGTH_SHORT).show();
+		} else if (id == R.id.action_test) {
+			Toast.makeText(ImpLoginActivity.this, "Hello world123", Toast.LENGTH_SHORT).show();
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if ( ! Def.IS_RELEASE ) {
+			if (keyCode == KeyEvent.KEYCODE_MENU) {
+				Logger.d(TAG, "onKeyDown MENU");
+				Intent intent2 = new Intent(this, NetworkConfigurationActivity.class);
+				intent2.putExtra("isDev", true);
+				startActivityForResult(intent2, REQUEST_CODE_CONFIGURATION);
+			}
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+	//!here======================================================================
 	
 	@Override
 	public void onCreateContent(Bundle savedInstanceState) {
@@ -649,18 +680,7 @@ public class ImpLoginActivity extends ImpMainActivity {
 		
 	}
 	
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if ( ! Def.IS_RELEASE ) {
-			if (keyCode == KeyEvent.KEYCODE_MENU) {
-				Logger.d(TAG, "onKeyDown MENU");
-				Intent intent2 = new Intent(this, NetworkConfigurationActivity.class);
-				intent2.putExtra("isDev", true);
-				startActivityForResult(intent2, REQUEST_CODE_CONFIGURATION);
-			}
-		}
-		return super.onKeyDown(keyCode, event);
-	}
+
 	
 	
 	private void deleteCashe () {

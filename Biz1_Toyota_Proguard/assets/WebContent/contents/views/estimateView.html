@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Cash-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/sub_estimate.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="myJs/common.js"></script>
+
+
+
+<title>Insert title here</title>
+</head>
+<body>
+	<div data-role="page" id="sub_wrap">
+
+
+
+
+		<!-- 헤더메뉴  -->
+		<div data-role="header" id="sub_header">
+
+
+
+
+			<button type="button" class="list" id="btn_menu">
+				<img src="../images/btn/list.png">
+			</button>
+			<div class="menu_pop">
+				<ul id="menuContent">
+					<li class="menu01 btn_menu" value="1">
+						<button onclick="location.href='estimate.html'">
+							<img src="../images/btn/menu1.png"><span>견적생성</span>
+						</button>
+					</li>
+					<li class="menu02 btn_menu" value="2">
+						<button onclick="location.href='estimateView.html'">
+							<img src="../images/btn/menu2.png"> <span>견적조회</span>
+						</button>
+					</li>
+					<li class="menu03 btn_menu" value="3">
+						<button onclick="location.href='estimate.html'">
+							<img src="../images/btn/menu3.png"> <span>나의정보</span>
+						</button>
+					</li>
+					<li class="menu04 btn_menu" value="4">
+						<button onclick="location.href='statistic.html'">
+							<img src="../images/btn/menu4.png"> <span>통계관리</span>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<h1 class="title">견적조회</h1>
+			<button class="re" id="btn_reset">
+				<span>초기화</span>
+			</button>
+		</div>
+		<!-- 헤더메뉴 끝 -->
+
+
+		<div data-role="content" id="sub_content">
+
+			<div class="inner_con f_mt" style="padding: .5em;">
+				<ul class="search_ul l_t">
+					<li id="btn_yesterday"><a>어제</a></li>
+					<li id="btn_recentWeek"><a>최근1주일</a></li>
+					<li id="btn_recentMonth"><a>최근1개월</a></li>
+				</ul>
+				<table class="ymd wp_100">
+					<tr>
+						<td class="wp_50"><input type="text" name="" id="from"
+							class="sc inp_from_date" readonly></td>
+						<td class="wp_50 pl_10"><input type="text" name="" id="to"
+							class="sc inp_to_date" readonly></td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td class="wp_100"><input type="text" name=""
+							id="inp_searchValue" placeholder="고객 식별 및 상품으로 조회가능"></td>
+						<td><a><button id="btn_search" class="cld_btn"
+									style="margin-left: 7px">검색</button></a></td>
+					</tr>
+				</table>
+			</div>
+
+			<div class="inner_con f_mt" style="padding: 0.2em 0;">
+				<table class="board_list2" id="list"></table>
+				<table class="board_list2" id="listTemplate" style="display: none;">
+					<tr class="record">
+						<td><img src="../images/icon/td_icon.gif" alt=""></td>
+						<td class="ct"><a href="#n"></a>
+							<div>
+								<span class="col1 est_seq_no"></span><span class="idnt_info"></span>
+							</div>
+							<div>
+								<span class="col2 mdel_name"></span><span class="prod_kubun"></span>
+								<span class="col3 user_name"></span>
+							</div>
+							<div>
+								<span class="col3 entry_time"></span>
+							</div> </a></td>
+						<td><img src="../images/icon/arrw-tr.gif" alt=""></td>
+					</tr>
+				</table>
+
+				<!-- 버튼영역 -->
+				<table class="board_list2" id="moreContent" style="display: none;">
+					<tr id="btn_more">
+						<td colspan="3" class="more_btn">
+							<button>
+								<img src="../images/icon/plus.gif" alt="+">더보기
+							</button>
+						</td>
+						</a>
+					</tr>
+				</table>
+				<!-- //버튼영역 -->
+			</div>
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page -->
+</body>
+</html>

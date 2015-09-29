@@ -22,6 +22,7 @@ import android.speech.RecognizerIntent;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,6 +42,8 @@ import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 import android.widget.Toast;
+
+
 
 import com.mcnc.hsmart.controller.Smart2ProcessController;
 import com.mcnc.hsmart.core.common.Request;
@@ -153,6 +156,22 @@ public class ImpMainActivity extends MainActivity {
 		// Clear cancel flag
 		this.cancelLoadUrl = false;
 	}
+	
+	
+	
+	//here======================================================================
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {			
+			Toast.makeText(ImpMainActivity.this, "Hello world!", Toast.LENGTH_SHORT).show();
+		} else if (id == R.id.action_test) {
+			Toast.makeText(ImpMainActivity.this, "Hello world123", Toast.LENGTH_SHORT).show();
+		}
+		return super.onOptionsItemSelected(item);
+	}
+	//!here======================================================================
+	
 	
 	@Override
 	public void onDestroy() {

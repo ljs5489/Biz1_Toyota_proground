@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>제목</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.structure-1.4.0-alpha.1.css">
+    <link rel="stylesheet" type="text/css" href="../../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <!--
+    <script type="text/javascript" src="../../js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../js/tr.js"></script>
+    <script type="text/javascript" src="../../js/jquery.mobile-1.4.0-alpha.1.min.js"></script>
+    <script type="text/javascript" src="../../js/ui10.js"></script>
+    <script type="text/javascript" src="../../js/tr.js"></script>
+   	-->
+    <script type="text/javascript" src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+   	<script type="text/javascript" src="../../js/jquery.mobile-1.4.0-alpha.1.min.js"></script>
+	<script type="text/javascript" src="../js/TFSMES401.js"></script>
+</head>
+
+<body>
+    <div data-role="none" id="sub_wrap">
+        <div data-role="content" id="sub_content">
+            <div class="inner_con f_mt pb-5">
+                <ul class="search_ul" id="tabContent">
+                    <li class="l_t"><a class="btn_tab on" value="1">사용자 별</a>
+                    </li>
+                    <li class="l_t"><a class="btn_tab" value="2">딜러 별</a>
+                    </li>
+                    <li><a class="btn_tab" value="3">차량 별</a>
+                    </li>
+                </ul>
+                <table class="ymd wp_100">
+                    <tr>
+                        <td class="wp_50">
+                            <input type="text" name="" id="from" readonly>
+                        </td>
+                        <td class="wp_50 pl_10">
+                            <input type="text" name="" id="to" readonly>
+                        </td>
+                    </tr>
+                </table>
+                <p class="ta_c f_mt"><a class="cld_btn" id="btn_search">검색</a>
+                </p>
+            </div>
+            <div class="inner_con f_mt">
+                <div class="grp_top ta_c">
+                    <a class="grp_btn_left fl_l" id="btn_left">이전순위로</a>
+                    <span><span id="startRank">1</span>위 ~ <span id="endRank">10</span>위</span>
+                    <a class="grp_btn_right fl_r" id="btn_right">다음순위로</a>
+                </div>
+
+                <!-- 세로 막대 그래프 차트 -->
+                <div class="grp_lap">
+                    <div class="grp_bg" id="graphContent">
+                        <ul>
+                            <li>200-</li>
+							<li>400-</li>
+							<li>600-</li>
+							<li>800-</li>
+                            <li>1000-</li>
+                        </ul>
+                        <dl>
+                            <dt class="rankText">1위</dt>
+                            <dd>
+                                <div class="bar-red rankGraph" style="height: 0%">
+									<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+								</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">2위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+									<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+								</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">3위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+									<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+								</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">4위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+									<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+								</div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">5위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+                                	<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">6위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+                                	<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">7위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+                                	<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">8위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+                                	<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">9위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+                                	<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt class="rankText">10위</dt>
+                            <dd>
+                                <div class="bar rankGraph" style="height: 0%">
+                                	<p style="position:absolute; top:-15px; left:-5px;" class="rankGraphNum"></p>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <!-- //세로 막대 그래프 차트 -->
+
+                <div class="grp_list pb-1_5">
+                    <ul id="listTemplate" style="display:none;">
+                        <li class="record">
+                        	<span class="rank"></span>
+                        	<span class="text1"></span>
+                        	<span class="text2"></span>
+                            <span class="red count"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /content -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

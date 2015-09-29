@@ -1,0 +1,16 @@
+{
+    "body": {
+        "customer_name" : "",
+        "user_id" : "",
+        "est_type" : "",
+        "from_user_email" : "",
+        "est_seq_no" : "",
+        "from_user" : "",
+        "to_mail_title" : "",
+        "to_user" : "",
+        "to_email" : "",
+        "to_type" : "",
+        "to_user_memo" : ""
+    },
+    "header": "@ToyotaHeader"
+}

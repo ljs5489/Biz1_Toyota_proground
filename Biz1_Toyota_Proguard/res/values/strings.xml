@@ -1,84 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Print it</string>
+    <string name="test">test</string>
+    
+    
     <string name="hello">Hello World!</string>
     <string name="app_name">TFSKR</string>
-	<string name="app_common_ok">확인</string>
-	<string name="app_common_cancel">취소</string>
-	<string name="app_login">로그인 중입니다</string>
-	<string name="login_IDHint">아이디</string>
-	<string name="login_PWHint">비밀번호</string>
-	<string name="login_NeedID">아이디를 입력해주세요</string>
-	<string name="login_NeedPass">비밀번호를 입력해주세요</string>
-	<string name="login_ValidationDialog_Title">로그인/패스워드 유효성 검사 실패</string>
-	<string name="login_ValidationDialog_Message">아이디 또는 비밀번호를 확인 후 다시 로그인해 주시기 바랍니다.</string>
-	<string name="configuration_Network_AccessIP">접속 IP</string>
-	<string name="configuration_Network_AccessPort">접속 Port</string>
-	<string name="configuration_Network_ResourceUrl">WebResource 주소</string>	
-	<string name="configuration_imageMode">1.local 2.asset 3.web </string>	
-	<string name="configuration_Network_UpdateURL">업데이트 서버 주소</string>
-	<string name="configuration_Network_UpdatePort">업데이트 Port</string>
-	<string name="configuration_Network_ssl">ssl 사용(true) 미사용(false)</string>
-	<string name="configuration_Network_AlertMessage">수정 할 경우 네트워크 접속이   원활하지 않을 수 있습니다.</string>
-	<string name="configuration_save">설정이 저장되었습니다</string>	
-	<string name="pleaseWait">잠시만 기다려 주십시오.</string>
-	<string name="app_validation_check_message">입력 값이 존재 하지 않습니다.</string>
-	
-	<string name="common_NoPage">목록이 없습니다.</string>
-	<string name="msg_endOfList">마지막 항목입니다.</string>
-	<string name="common_PageMove">페이지 이동</string>
-	
-	<!--Smart1-->
-	<string name="smart1_msg_loadMoreMessage">  더 보 기</string>
-	<string name="mail_Hint_Receiver">메일주소를 입력하세요</string>
-	<string name="smart1_msg_emptySearchTarget">검색 대상을 지정해 주십시오.</string>
-	
-	<string name="smart1_app_common_exit">스마트를 종료하시겠습니까?</string>
-	<string name="smart1_menu_goMainPage">스마트 홈</string>
-	<string name="smart1_menu_ProgramTerminate">스마트 종료</string>
-	<string name="smart1_app_common_DeleteDialog_Message">삭제하시겠습니까?</string>
-	
-	<string name="smart1_contact_GroupwareEmployeeText">회사주소록</string>
-	<string name="smart1_contact_GroupwareContactText">개인주소록</string>
-	<string name="smart1_contact_DeviceContactText">폰연락처</string>
-	<string name="smart1_contact_HistorySearchText">최근 검색 조건</string>
-	<string name="smart1_contact_Title_search">주소록 검색</string>
-	<string name="smart1_msg_emptySearchResult">조회된 연락처가 없습니다.</string>
-	<string name="smart1_msg_shortLengthSearch">검색어를 입력해 주세요\n(한글2글자,영문 4자이상)</string>
+    <string name="app_common_ok">확인</string>
+    <string name="app_common_cancel">취소</string>
+    <string name="app_login">로그인 중입니다</string>
+    <string name="login_IDHint">아이디</string>
+    <string name="login_PWHint">비밀번호</string>
+    <string name="login_NeedID">아이디를 입력해주세요</string>
+    <string name="login_NeedPass">비밀번호를 입력해주세요</string>
+    <string name="login_ValidationDialog_Title">로그인/패스워드 유효성 검사 실패</string>
+    <string name="login_ValidationDialog_Message">아이디 또는 비밀번호를 확인 후 다시 로그인해 주시기 바랍니다.</string>
+    <string name="configuration_Network_AccessIP">접속 IP</string>
+    <string name="configuration_Network_AccessPort">접속 Port</string>
+    <string name="configuration_Network_ResourceUrl">WebResource 주소</string>
+    <string name="configuration_imageMode">1.local 2.asset 3.web </string>
+    <string name="configuration_Network_UpdateURL">업데이트 서버 주소</string>
+    <string name="configuration_Network_UpdatePort">업데이트 Port</string>
+    <string name="configuration_Network_ssl">ssl 사용(true) 미사용(false)</string>
+    <string name="configuration_Network_AlertMessage">수정 할 경우 네트워크 접속이   원활하지 않을 수 있습니다.</string>
+    <string name="configuration_save">설정이 저장되었습니다</string>
+    <string name="pleaseWait">잠시만 기다려 주십시오.</string>
+    <string name="app_validation_check_message">입력 값이 존재 하지 않습니다.</string>
+    <string name="common_NoPage">목록이 없습니다.</string>
+    <string name="msg_endOfList">마지막 항목입니다.</string>
+    <string name="common_PageMove">페이지 이동</string>
 
+    <!-- Smart1 -->
+    <string name="smart1_msg_loadMoreMessage">  더 보 기</string>
+    <string name="mail_Hint_Receiver">메일주소를 입력하세요</string>
+    <string name="smart1_msg_emptySearchTarget">검색 대상을 지정해 주십시오.</string>
+    <string name="smart1_app_common_exit">스마트를 종료하시겠습니까?</string>
+    <string name="smart1_menu_goMainPage">스마트 홈</string>
+    <string name="smart1_menu_ProgramTerminate">스마트 종료</string>
+    <string name="smart1_app_common_DeleteDialog_Message">삭제하시겠습니까?</string>
+    <string name="smart1_contact_GroupwareEmployeeText">회사주소록</string>
+    <string name="smart1_contact_GroupwareContactText">개인주소록</string>
+    <string name="smart1_contact_DeviceContactText">폰연락처</string>
+    <string name="smart1_contact_HistorySearchText">최근 검색 조건</string>
+    <string name="smart1_contact_Title_search">주소록 검색</string>
+    <string name="smart1_msg_emptySearchResult">조회된 연락처가 없습니다.</string>
+    <string name="smart1_msg_shortLengthSearch">검색어를 입력해 주세요\n(한글2글자,영문 4자이상)</string>
+    <string name="smart1_calendar_subject">제목</string>
+    <string name="smart1_calendar_location">장소</string>
+    <string name="smart1_calendar_time">일시</string>
+    <string name="smart1_calendar_start">시작</string>
+    <string name="smart1_calendar_end">종료</string>
+    <string name="smart1_calendar_allday">하루종일</string>
+    <string name="smart1_calendar_repeat">반복</string>
+    <string name="smart1_calendar_alarm">알림</string>
+    <string name="smart1_calendar_attendee">참석자</string>
+    <string name="smart1_calendar_attendeeList">참석자 목록</string>
+    <string name="smart1_calendar_attendeeSearchResult">참석자 조회 결과</string>
+    <string name="smart1_calendar_desc">설명</string>
+    <string name="smart1_calendar_content">내용</string>
+    <string name="smart1_calendar_title_view">일정 보기</string>
+    <string name="smart1_calendar_title_modify">일정 수정</string>
+    <string name="smart1_calendar_title_new">일정 추가</string>
+    <string name="smart1_calendar_event_list">일정리스트</string>
+    <string name="smart1_calendar_menu_save">일정 저장</string>
+    <string name="smart1_calendar_add_desc">내용을 입력하세요.</string>
+    <string name="smart1_calendar_event_edit_back">일정 편집 화면으로</string>
+    <string name="smart1_calendar_delete_all_attendee">모든 참석자 삭제</string>
+    <string name="smart1_calendar_attendeeInvalidAddr">정상적인 메일주소를 입력해 주세요.</string>
+    <string name="smart1_calendar_add_subject">주제를</string>
+    <string name="smart1_calendar_add_place">장소를</string>
+    <string name="smart1_calendar_add_content">설명을</string>
+    <string name="smart1_calendar_add_suffix"> 입력해 주세요.</string>
+    <string name="smart1_calendar_add_validation_fail_title">안내</string>
+    <string name="smart1_calendar_add_save">일정이 저장되었습니다.</string>
+    <string name="smart1_calendar_edit_save">일정이 수정되었습니다.</string>
+    <string name="smart1_calendar_add_date">종료일시가 시작일시 보다 빠릅니다.</string>
 
-	<string name="smart1_calendar_subject">제목</string>
-	<string name="smart1_calendar_location">장소</string>
-	<string name="smart1_calendar_time">일시</string>
-	<string name="smart1_calendar_start">시작</string>
-	<string name="smart1_calendar_end">종료</string>
-	<string name="smart1_calendar_allday">하루종일</string>
-	<string name="smart1_calendar_repeat">반복</string>
-	<string name="smart1_calendar_alarm">알림</string>
-	<string name="smart1_calendar_attendee">참석자</string>
-	<string name="smart1_calendar_attendeeList">참석자 목록</string>
-	<string name="smart1_calendar_attendeeSearchResult">참석자 조회 결과</string>
-	<string name="smart1_calendar_desc">설명</string>
-	<string name="smart1_calendar_content">내용</string>
-	<string name="smart1_calendar_title_view">일정 보기</string>
-	<string name="smart1_calendar_title_modify">일정 수정</string>
-	<string name="smart1_calendar_title_new">일정 추가</string>
-	<string name="smart1_calendar_event_list">일정리스트</string>
-	<string name="smart1_calendar_menu_save">일정 저장</string>
-	<string name="smart1_calendar_add_desc">내용을 입력하세요.</string>
-	<string name="smart1_calendar_event_edit_back">일정 편집 화면으로</string>
-	<string name="smart1_calendar_delete_all_attendee">모든 참석자 삭제</string>
-	<string name="smart1_calendar_attendeeInvalidAddr">정상적인 메일주소를 입력해 주세요.</string>
-
-	<string name="smart1_calendar_add_subject">주제를</string>
-	<string name="smart1_calendar_add_place">장소를</string>
-	<string name="smart1_calendar_add_content">설명을</string>
-	<string name="smart1_calendar_add_suffix"> 입력해 주세요.</string>
-	<string name="smart1_calendar_add_validation_fail_title">안내</string>
-	<string name="smart1_calendar_add_save">일정이 저장되었습니다.</string>
-	<string name="smart1_calendar_edit_save">일정이 수정되었습니다.</string>
-	<string name="smart1_calendar_add_date">종료일시가 시작일시 보다 빠릅니다.</string>
-
-<!--  QR_Code 관련 String 20101220	-->
+    <!-- QR_Code 관련 String 20101220 -->
     <string name="button_clipboard_empty">Clipboard empty</string>
     <string name="button_read_book">Browse book</string>
     <string name="menu_about">About</string>

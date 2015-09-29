@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>제목</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.structure-1.4.0-alpha.1.css">
+    <link rel="stylesheet" type="text/css" href="../../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <!--
+    <script type="text/javascript" src="../../js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../js/tr.js"></script>
+    <script type="text/javascript" src="../../js/jquery.mobile-1.4.0-alpha.1.min.js"></script>
+    <script type="text/javascript" src="../../js/ui10.js"></script>
+    -->
+    <script type="text/javascript" src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script type="text/javascript" src="../../js/jquery.mobile-1.4.0-alpha.1.min.js"></script>
+	<script type="text/javascript" src="../js/TFSMES203.js"></script>
+</head>
+
+<body>
+    <div data-role="page" id="sub_wrap">
+        <div data-role="content" id="sub_content">
+            <ul class="my_info f_mt">
+            	<li class="info02 tab on" value="2"><span>고객</span>
+                <li class="info01 tab off" value="1">
+                    <span>TFSKR</span>
+                </li>
+                </li>
+            </ul>
+            <div class="info_wrap1">
+                <!-- 고객메일 content -->
+                <div class="info_div2" id="form2">
+                    <table width="100%">
+                        <tbody class="tb_ok">
+<!--                             <tr>
+                                <th scope="row" class="ta_c">받는사람</th>
+                                <td>
+                                    <input type="text" class="receiver_name">
+                                </td>
+                            </tr> -->
+                            
+                            
+                            <tr>
+                                <th scope="row" class="ta_c wid_203">받는사람</th>
+                                <td>
+                                	<div class="search01" id="filterName">
+	                                    <input type="text" id="receiverName" class="receiver_name" />
+	                                    <a class="cld_btn" id="receiverSearch">조회</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            
+                            <tr>
+                                <th scope="row" class="ta_c wid_203">받는사람메일</th>
+                                <td>
+                                    <input type="text" id="receiverMail" class="receiver_mail">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="ta_c wid_203">보내는사람</th>
+                                <td>
+                                    <input type="text" class="sender_email">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th scope="row"  class="ta_c wid_203">전화번호</th>
+                                <td>
+                                    <input type="text" id="senderTel">
+                                </td>
+                            </tr>
+                            <tr>
+                            	<th scope="row"  class="ta_c wid_203">메모</th>
+                            	<td>
+                            		<textarea rows="5" cols="50" id="custMemo"></textarea>
+                            	</td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="2" class="ta_c wid_203"><a class="save_btn" id="btn_sendCust">보내기</a>  <a class="can_btn btn_cancel">취 소</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //고객메일 content -->
+                
+                <!-- TFSKR메일 content -->
+                <div class="info_div2" id="form1" style="display:none;">
+                    <table width="100%">
+                        <tbody class="tb_ok">
+                            <tr>
+                                <th scope="row" class="ta_c wid_203" width="30%">받는사람</th>
+                                <td>
+                                	<select id="slt_receiverName">
+                                		<option user_email="" mail_to_id="">선택</option>
+                                	</select>
+                                    <!-- <input type="text" class="receiver_name"> -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="ta_c wid_203">받는사람메일</th>
+                                <td>
+                                    <input type="text" class="receiver_mail">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="ta_c wid_203">고객명</th>
+                                <td>
+                                    <input type="text" id="customerName">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                            	<th scope="row" class="ta_c wid_203">메모</th>
+                            	<td>
+                            		<textarea rows="5" cols="50" id="tfskrMemo"></textarea>
+                            	</td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="2" class="ta_c wid_203"><a class="save_btn" id="btn_SendTFSKR">보내기</a>  <a class="can_btn btn_cancel">취 소</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- //TFSKR메일 content -->
+            </div>
+        </div>
+        <!-- /content -->
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

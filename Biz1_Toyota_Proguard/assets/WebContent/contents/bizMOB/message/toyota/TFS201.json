@@ -1,0 +1,13 @@
+{
+    "body": {
+    	"dealer_id" : "",
+    	"user_id" : "",
+    	"rowsPerPage" : "",
+    	"beginIndex" : "",
+    	"sch_keyword" : "",
+    	"sch_end_date" : "",
+        "sch_start_date" : "",
+        "use_kubun" : ""
+    },
+    "header": "@ToyotaHeader"
+}

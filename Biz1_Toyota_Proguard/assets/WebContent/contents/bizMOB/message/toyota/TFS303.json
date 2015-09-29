@@ -1,0 +1,8 @@
+{
+    "body": {
+    	"user_check_passwd" : "",
+    	"user_new_passwd" : "",
+        "user_id" : ""
+    },
+    "header": "@ToyotaHeader"
+}

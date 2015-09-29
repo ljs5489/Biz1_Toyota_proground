@@ -1,0 +1,8 @@
+{
+    "body": {
+        "user_id" : "",
+        "cust_name" : "",
+        "cust_email" : ""
+    },
+    "header": "@ToyotaHeader"
+}

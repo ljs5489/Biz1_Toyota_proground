@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0,maximum-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>견적상세정보</title>
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../../css/jquery.mobile.structure-1.4.0-alpha.1.css">
+    <link rel="stylesheet" type="text/css" href="../../css/sub.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+    <!--
+    <script type="text/javascript" src="../../js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="../../js/tr.js"></script>
+    <script type="text/javascript" src="../../js/jquery.mobile-1.4.0-alpha.1.min.js"></script>
+    <script type="text/javascript" src="../../js/ui10.js"></script>
+    -->
+    <script type="text/javascript" src="../../bizMOB/bizMOB-jsloader-1.0.js"></script>
+    <script type="text/javascript" src="../../js/jquery.mobile-1.4.0-alpha.1.min.js"></script>
+	<script type="text/javascript" src="../js/TFSMES202.js"></script>
+</head>
+
+<body>
+
+    <div data-role="page" id="sub_wrap">
+        <div data-role="content" id="sub_content">
+            <div class="inner_con f_mt">
+                <table width="100%" class="board_tb">
+                    <colgroup>
+                        <col width="40%">
+                            <col width="60%">
+                    </colgroup>
+                    <tbody class="tb_ok">
+                        <tr>
+                            <th scope="row" class="tb_rd">견적번호</th>
+                            <td id="estSeqNo"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="tb_rd">견적식별정보</th>
+                            <td id="idntInfo"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="tb_rdl">금융상품구분</th>
+                            <td id="prodKubunName"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="tb_rdl">메일전송여부</th>
+                            <td id="mailYn"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h2>견적결과정보</h2>
+            <h2 id="proName" style="display:none;"></h2>
+            <div class="inner_con">
+                <table width="100%" class="board_tb">
+                    <colgroup>
+                        <col width="40%">
+                            <col width="60%">
+                    </colgroup>
+                    <tbody class="tb_ok">
+                        <tr>
+                            <th scope="row" class="tb_rd">차종</th>
+                            <td id="carName"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">차량가</th>
+                            <td id="carAmt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">등록세</th>
+                            <td id="regtaxAmt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">취득세</th>
+                            <td id="acqtaxAmt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">공채할인</th>
+                            <td id="publDebtDiscRate"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">부대비용</th>
+                            <td id="extraChrgAmt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="tb_rdl">총구매비용</th>
+                            <td id="totalAmt"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="inner_con">
+                <table width="100%" class="board_tb">
+                    <colgroup>
+                        <col width="40%">
+                            <col width="60%">
+                    </colgroup>
+                    <tbody class="tb_ok">
+                        <tr>
+                            <th scope="row" class="tb_rd" id="leasUtilAmtText">이용금액</th>
+                            <td id="leasUtilAmt"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="advsPaidAmtText">선수금</th>
+                            <td id="advsPaidAmt"></td>
+                        </tr>
+                        <tr id="sdAmtContent" style="display:none;">
+                            <th scope="row">보증금</th>
+                            <td>
+                            	<span id="sdRate"></span>&nbsp;/
+                            	<span id="sdAmt"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">기간</th>
+                            <td id="term"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" id="pospAmtText">유예금</th>
+                            <td>
+                            	<span id="pospRate"></span>&nbsp;/
+                            	<span id="pospAmt"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="tb_rdl" id="prerelPayAmtText">출고전납입금액<br/>(인지대 포함)</th>
+                            <td id="prerelPayAmt"></td>
+                        </tr>
+                        <tr id="atSubsidyContent" style="display:none;">
+                            <th scope="row" class="tb_rdl">보조금</th>
+                            <td id="atSubsidy"></td>
+                        </tr>
+                        <tr id="atSubsidyAddContent" style="display:none;">
+                            <th scope="row" class="tb_rdl">추가보조금</th>
+                            <td id="atSubsidyAdd"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="inner_con clear f_mt" id="carTaxMonthDueAmtContent" style="display:none;">
+                <table width="100%" class="board_tb2">
+                    <colgroup>
+                        <col width="35%">
+                            <col width="65%">
+                    </colgroup>
+                    <tbody>
+                        <th scope="row">월리스료<br/>(차세포함)</th>
+                        <td class="ta_r" id="carTaxMonthDueAmt"></td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="inner_con clear f_mt">
+                <table width="100%" class="board_tb2">
+                    <colgroup>
+                        <col width="35%">
+                            <col width="65%">
+                    </colgroup>
+                    <tbody>
+                        <th scope="row" id="monthDueAmtText">월리스료<br/>(차세미포함)</th>
+                        <td class="ta_r" id="monthDueAmt"></td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="inner_con clear f_mt" id="billingProContent" style="display:none;">
+                <table width="100%" class="board_tb2">
+                    <colgroup>
+                        <col width="35%">
+                            <col width="65%">
+                    </colgroup>
+                    <tbody>
+                        <th scope="row"></th>
+                        <td class="ta_r" id="billing"></td>
+                    </tbody>
+                </table>
+            </div>
+			
+            <p class="clear ov_h" style="margin-top:1em;">
+            	<!--
+                <a class="bot_move_btn fl_l" id="btn_goList">
+                    <img src="../../images/icon/arrw_r.png" alt="화살표버튼">
+                    <span>목록</span>
+                </a>
+               -->
+                <a class="out_btn fl_r" id="btn_delete">견적삭제</a>
+            </p>
+        </div>
+        <!-- /content -->
+        <br/>
+        <br/>
+
+    </div>
+    <!-- /page -->
+
+</body>
+
+</html>

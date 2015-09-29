@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta name="viewport"
+	content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Cash-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/sub_estimate.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="myJs/common.js"></script>
+<script>
+	$(function() {
+		$(".pages").hide();
+		$("#page1").show();
+		getDatas();
+	})
+	function showPage(page) {
+		$(".pages").hide();
+		$(page).show();
+		getDatas();		
+	}
+	function getNumber(val){//문자+숫자에서 숫자만 추출	
+		var temp=parseInt(val, 10);
+		if(isNaN(temp)) temp=0;		
+		console.log(temp);
+		return temp;
+	}
+		
+	var cars=[  	            
+	            ['Camry',5000000000], //[0]["Camry"] = 50000000
+	            ['Prius',3000000000]  //[1]["Prius"] = 30000000	            
+	            ];
+	
+	
+	function getValFromArr(arr, index){//값 배열에서 차 이름으로 값을 가져온다
+		var returnVal=0;
+		for(var i=0; i<arr.length;i++){
+			if(arr[i][0]==index){
+				returnVal=arr[i][1];
+			}			
+		}
+		return returnVal;
+		
+	}
+	$(function(){
+		$("#slt_carModel").change(function(){
+			var temp=getValFromArr(cars,$(this).val());
+			console.log(temp);
+			$("#carAmt").html(temp+"원");		
+			
+		});
+		
+	})
+
+	
+</script>
+
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div data-role="header" id="sub_header">
+		<button type="button" class="list" id="btn_menu">
+			<img src="../images/btn/list.png">
+		</button>
+		<div class="menu_pop">
+			<ul id="menuContent">
+				<li class="menu01 btn_menu" value="1">
+					<button onclick="location.href='estimate.html'">
+						<img src="../images/btn/menu1.png"><span>견적생성</span>
+					</button>
+				</li>
+				<li class="menu02 btn_menu" value="2">
+					<button onclick="location.href='estimateView.html'">
+						<img src="../images/btn/menu2.png"> <span>견적조회</span>
+					</button>
+				</li>
+				<li class="menu03 btn_menu" value="3">
+					<button onclick="location.href='estimate.html'">
+						<img src="../images/btn/menu3.png"> <span>나의정보</span>
+					</button>
+				</li>
+				<li class="menu04 btn_menu" value="4">
+					<button onclick="location.href='statistic.html'">
+						<img src="../images/btn/menu4.png"> <span>통계관리</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+
+		<h1 class="title">견적생성</h1>
+		<button class="re" id="btn_reset">
+			<span>초기화</span>
+		</button>
+	</div>
+
+
+
+
+	<div data-role="page" id="page1" class="pages">
+
+		<div data-role="content" id="sub_content">
+			<h2>견적식별정보 입력</h2>
+			<input type="text" name="" id="inp_idntInfo" class="text00" />
+			<h2>차량정보 입력</h2>
+			<div class="inner_con">
+				<table width="100%" class="board_tb" cellpadding="0" cellspacing="0"
+					width="100%">
+					<colgroup>
+						<col style="width: 20%" />
+						<col style="width: 40%" />
+						<col style="width: 15%" />
+						<col style="width: 25%" />
+					</colgroup>
+					<tfoot class="tb_foot">
+						<tr>
+							<th scope="row">총금액</th>
+							<td colspan="3" class="ta_r" id="totalAmt">0원</td>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr>
+							<th scope="row">차종</th>
+							<td>
+								<div>
+									<select name="txtCountry" class="" id="slt_carModel">
+										<option>Camry</option>
+										<option>Prius</option>
+									</select>
+
+								</div>
+							</td>
+							<th scope="row" class="year_content"><label for="chk_year">연식</label></th>
+							<td class="year_content">
+								<div>
+									<span class="selectDefault2"></span> <select name="txtCountry"
+										class="" val="test1" id="slt_carModelYear">
+										<option>test1</option>
+										<option>test2</option>
+										<option>test3</option>
+										<option>test4</option>
+									</select>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">차량가</th>
+							<td colspan="3" class="ta_r" id="carAmt">0원</td>
+						</tr>
+						<tr>
+							<th scope="row">차량가 <br /> 할인금액
+							</th>
+							<td colspan="3" class="ta_r">
+								<div class="c_b">
+									<input type="tel" name="" id="inp_disCarAmt" class="text01" />
+								</div> <span>원</span>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">등록세</th>
+							<td><button type="button" class="tbtn btn_on_off"
+									value="regtax"></button></td>
+							<td colspan="2" class="ta_r" id="regtax_amt">0원</td>
+						</tr>
+						<tr>
+							<th scope="row">취득세</th>
+							<td><button type="button" class="tbtn btn_on_off"
+									value="acqtax"></button> <!-- tbtn_off --></td>
+							<td colspan="2" class="ta_r" id="acqtax_amt">0원</td>
+						</tr>
+						<tr>
+							<th scope="row">공채</th>
+							<td><button type="button" class="tbtn btn_on_off"
+									value="pubbond"></button> <!-- tbtn_off --></td>
+							<td colspan="2" class="ta_r" id="pubbond_amt">0원</td>
+						</tr>
+						<tr id="hybridContent">
+							<th scope="row">Hybrid</th>
+							<td colspan="3" class="ta_r"><select id="slt_disHybrid"
+								name="">
+									<option>채권할인 200만원</option>
+									<option>채권할인 150만원</option>
+									<option>채권할인 0원</option>
+							</select></td>
+						</tr>
+						<tr id="purcRateContent">
+							<th scope="row">공채 <br /> 매입율
+							</th>
+							<td colspan="3" class="ta_r"><select
+								id="slt_publDebtPurcRate" name="">
+									<option>5%</option>
+									<option>10%</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th scope="row">공채 <br /> 할인율
+							</th>
+							<td colspan="3" class="ta_r"><select
+								id="slt_publDebtDiscRate" name="">
+									<option>8%</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th scope="row">부대비용</th>
+							<td colspan="3" class="ta_r">
+								<div class="c_b">
+									<input type="tel" name="" id="inp_extraChrgAmt" class="text01"
+										value="0">
+								</div> <span>원</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<p class="clear ta_r">
+				<button class="bot_move_btn_left fl_l" id="btn_before"
+					onclick="history.back()">
+					<span>이전</span>
+				</button>
+				<button class="bot_move_btn fl_r" id="btn_next"
+					onclick="showPage($('#page2'))">
+					<span>다음</span>
+				</button>
+			</p>
+			<br /> <br /> <br /> <input type="hidden" name="pageData"
+				id="pageData" value="" />
+			<!-- history.back()용 data -->
+
+		</div>
+		<!-- /content -->
+	</div>
+	<!-- /page -->
+
+
+
+	<!-- 견적페이지2--------------------------------------------------------------- -->
+	<!-- 견적페이지2--------------------------------------------------------------- -->
+	<!-- 견적페이지2--------------------------------------------------------------- -->
+	<div data-role="page" id="page2" class="pages">
+		<div data-role="content" id="sub_content">
+			<h2>금융상품조건 입력</h2>
+			<!-- 운용리스 layout -->
+			<div id="B02OLayout">
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="28%">
+							<col width="30%">
+							<col width="42%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">금융상품</th>
+								<td colspan="2"><select class="slt_financial selectpicker"
+									name="">
+										<option value="B02O">운용리스</option>
+										<option value="B02F">금융리스</option>
+										<option value="B02L">할부금융</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th scope="row">리스이용금액</th>
+								<td colspan="2">
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_leasUtilAmt"
+											style="display: none;"> <input type="tel" name=""
+											class="text01 inp_leasUtilAmtView">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">선납금</th>
+								<td>
+									<div class="c_m">
+										<input type="tel" name="" class="text01 inp_advsPaidAmtPer">
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_advsPaidAmt">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">기간</th>
+								<td>
+									<div class="c_m">
+										<select class="slt_term selectpicker" name="">
+											<option>36</option>
+											<option>48</option>
+										</select>
+									</div> <span>개월</span>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">보증금</th>
+								<td>
+									<div class="c_m">
+										<select name="" class="slt_sdRate">
+											<option>20</option>
+											<option>30</option>
+										</select>
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_sdAmt"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">잔가</th>
+								<td>
+									<div class="c_m">
+										<select id="" class="slt_remainingVal">
+											<option>10</option>
+											<option>20</option>
+										</select>
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_remainingVal"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">이자율</th>
+								<td>
+									<button class="cld_btn promotion_sub_content btn_calcIntRate"
+										style="display: none;">
+										<span>계산</span>
+									</button>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_intRate"
+											disabled="disabled">
+									</div> <span>%</span>
+								</td>
+							</tr>
+							<tr class="promotion_content" style="display: none;">
+								<th scope="row">프로모션</th>
+								<td colspan="2"><select name="" class="slt_promotion">
+										<option value="">일반상품</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th scope="row">SCP</th>
+								<td>
+									<div class="c_m">
+										<input type="text" name="" class="text01 inp_jiScPerRate">
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_jiScPer"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<!-- 프로모션인 경우 추가 항목 -->
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">추가보조금</th>
+								<td>
+									<button class="cld_btn btn_calcTotAtSubsidy">
+										<span>계산</span>
+									</button>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_atSubsidyAdd"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">보조금</th>
+								<td></td>
+								<td colspan="2" class="atSubsidy">0원</td>
+							</tr>
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">전체보조금</th>
+								<td></td>
+								<td colspan="2" class="totAtSubsidy">0원</td>
+							</tr>
+							<tr class="promotion_sub_content promotion_sub_pay_content"
+								style="display: none;">
+								<th scope="row">물품지급금액</th>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_paymentAmt"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+								<td class="paymentAmtDetail"></td>
+							</tr>
+							<!-- //프로모션인 경우 추가 항목 -->
+						</tbody>
+						<tfoot class="tb_foot">
+							<tr>
+								<th colspan="2" scope="row">초기 납입금액</th>
+								<td class="ta_r prerelPayAmt">0원</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="25%">
+							<col width="40%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월리스료</th>
+							<td class="ta_l">
+								<button class="cld_btn btn_calcMonthDueAmt">
+									<span>계산</span>
+								</button>
+							</td>
+							<td class="ta_r monthDueAmt">0원</td>
+						</tbody>
+					</table>
+				</div>
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="25%">
+							<col width="40%">
+						</colgroup>
+						<tbody>
+							<th scope="row">총월리스료(차세)</th>
+							<td><button type="button" class="tbtn tbtn_off btn_on_off"></button></td>
+							<td class="ta_r carTaxMonthDueAmt">0원</td>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //운용리스 layout -->
+			<!-- 금융리스 layout -->
+			<div id="B02FLayout" style="display: none;">
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="28%">
+							<col width="30%">
+							<col width="42%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">금융상품</th>
+								<td colspan="2"><select class="slt_financial selectpicker"
+									name="">
+										<option value="B02O">운용리스</option>
+										<option value="B02F">금융리스</option>
+										<option value="B02L">할부금융</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th scope="row">이용금액</th>
+								<td colspan="2">
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_leasUtilAmt">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">선수금</th>
+								<td>
+									<div class="c_m">
+										<input type="tel" name="" class="text01 inp_advsPaidAmtPer">
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_advsPaidAmt">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">기간</th>
+								<td>
+									<div class="c_m">
+										<select class="slt_term selectpicker" name=""></select>
+									</div> <span>개월</span>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">유예금</th>
+								<td>
+									<div class="c_m">
+										<select name="" class="slt_remainingVal"></select>
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_remainingVal"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">이자율</th>
+								<td>
+									<button class="cld_btn promotion_sub_content btn_calcIntRate"
+										style="display: none;">
+										<span>계산</span>
+									</button>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_intRate"
+											disabled="disabled">
+									</div> <span>%</span>
+								</td>
+							</tr>
+							<tr class="promotion_content" style="display: none;">
+								<th scope="row">프로모션</th>
+								<td colspan="2"><select name="" class="slt_promotion">
+										<option value="">일반상품</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th scope="row">SCP</th>
+								<td>
+									<div class="c_m">
+										<input type="text" name="" class="text01 inp_jiScPerRate">
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_jiScPer"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<!-- 프로모션인 경우 추가 항목 -->
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">추가보조금</th>
+								<td>
+									<button class="cld_btn btn_calcTotAtSubsidy">
+										<span>계산</span>
+									</button>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_atSubsidyAdd"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">보조금</th>
+								<td></td>
+								<td colspan="2" class="atSubsidy">0원</td>
+							</tr>
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">전체보조금</th>
+								<td></td>
+								<td colspan="2" class="totAtSubsidy">0원</td>
+							</tr>
+							<tr class="promotion_sub_content promotion_sub_pay_content"
+								style="display: none;">
+								<th scope="row">물품지급금액</th>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_paymentAmt"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+								<td class="paymentAmtDetail"></td>
+							</tr>
+							<!-- //프로모션인 경우 추가 항목 -->
+						</tbody>
+						<tfoot class="tb_foot">
+							<tr>
+								<th colspan="2" scope="row">출고전 납입금액</th>
+								<td class="ta_r prerelPayAmt">0원</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="25%">
+							<col width="40%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월리스료</th>
+							<td class="ta_l">
+								<button class="cld_btn btn_calcMonthDueAmt">
+									<span>계산</span>
+								</button>
+							</td>
+							<td class="ta_r monthDueAmt">0원</td>
+						</tbody>
+					</table>
+				</div>
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="25%">
+							<col width="40%">
+						</colgroup>
+						<tbody>
+							<th scope="row">총월리스료(차세)</th>
+							<td><button type="button" class="tbtn tbtn_off btn_on_off"></button></td>
+							<td class="ta_r carTaxMonthDueAmt">0원</td>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- //금융리스 layout -->
+			<!-- 할부금융 layout -->
+			<div id="B02LLayout" style="display: none;">
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="28%">
+							<col width="30%">
+							<col width="42%">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">금융상품</th>
+								<td colspan="2"><select class="slt_financial selectpicker"
+									name="">
+										<option value="B02O">운용리스</option>
+										<option value="B02F">금융리스</option>
+										<option value="B02L">할부금융</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th scope="row">이용금액</th>
+								<td colspan="2">
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_leasUtilAmt">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">선수금</th>
+								<td>
+									<div class="c_m">
+										<input type="tel" name="" class="text01 inp_advsPaidAmtPer">
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_advsPaidAmt">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">기간</th>
+								<td>
+									<div class="c_m">
+										<select class="slt_term selectpicker" name=""></select>
+									</div> <span>개월</span>
+								</td>
+								<td></td>
+							</tr>
+							<!--
+								<tr>
+								<th scope="row">보증금</th>
+								<td>
+								<select name="" class="slt_sdRate">
+								</select>
+								</td>
+								<td>
+								<input type="text" name="" class="text01 inp_sdAmt">
+								</td>
+								</tr>
+								-->
+							<tr>
+								<th scope="row">유예금</th>
+								<td>
+									<div class="c_m">
+										<select name="" class="slt_remainingVal"></select>
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_remainingVal"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">이자율</th>
+								<td>
+									<button class="cld_btn promotion_sub_content btn_calcIntRate"
+										style="display: none;">
+										<span>계산</span>
+									</button>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_intRate"
+											disabled="disabled">
+									</div> <span>%</span>
+								</td>
+							</tr>
+							<tr class="promotion_content" style="display: none;">
+								<th scope="row">프로모션</th>
+								<td colspan="2"><select name="" class="slt_promotion">
+										<option value="">일반상품</option>
+								</select></td>
+							</tr>
+							<tr>
+								<th scope="row">SCP</th>
+								<td>
+									<div class="c_m">
+										<input type="text" name="" class="text01 inp_jiScPerRate">
+									</div> <span class="p_r">%</span>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_jiScPer"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<!-- 프로모션인 경우 추가 항목 -->
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">추가보조금</th>
+								<td>
+									<button class="cld_btn btn_calcTotAtSubsidy">
+										<span>계산</span>
+									</button>
+								</td>
+								<td>
+									<div class="c_b">
+										<input type="tel" name="" class="text01 inp_atSubsidyAdd"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+							</tr>
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">보조금</th>
+								<td></td>
+								<td colspan="2" class="atSubsidy">0원</td>
+							</tr>
+							<tr class="promotion_sub_content" style="display: none;">
+								<th scope="row">전체보조금</th>
+								<td></td>
+								<td colspan="2" class="totAtSubsidy">0원</td>
+							</tr>
+							<tr class="promotion_sub_content promotion_sub_pay_content"
+								style="display: none;">
+								<th scope="row">물품지급금액</th>
+								<td>
+									<div class="c_b">
+										<input type="text" name="" class="text01 inp_paymentAmt"
+											disabled="disabled">
+									</div> <span>원</span>
+								</td>
+								<td class="paymentAmtDetail"></td>
+							</tr>
+							<!-- //프로모션인 경우 추가 항목 -->
+						</tbody>
+						<tfoot class="tb_foot">
+							<tr>
+								<th colspan="2" scope="row">출고전 납입금액</th>
+								<td class="ta_r prerelPayAmt">0원</td>
+							</tr>
+						</tfoot>
+					</table>
+				</div>
+
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="25%">
+							<col width="40%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월할부금</th>
+							<td class="ta_l">
+								<button class="cld_btn btn_calcMonthDueAmt">
+									<span>계산</span>
+								</button>
+							</td>
+							<td class="ta_r monthDueAmt">0원</td>
+						</tbody>
+					</table>
+				</div>
+				<!--
+					<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0" cellspacing="0">
+					<colgroup>
+					<col width="35%">
+					<col width="25%">
+					<col width="40%">
+					</colgroup>
+					<tbody>
+					<th scope="row">총월할부금(차세)</th>
+					<td>
+					<button type="button" class="tbtn tbtn_off btn_on_off"></button>
+					</td>
+					<td class="ta_r carTaxMonthDueAmt">0원</td>
+					</tbody>
+					</table>
+					</div>
+					-->
+			</div>
+			<!-- //할부금융 layout -->
+
+			<p class="clear ov_h">
+				<button class="bot_move_btn_left fl_l" id="btn_before"
+					onclick="showPage($('#page1'))">
+					<span>이전</span>
+				</button>
+				<button class="bot_move_btn fl_r" id="btn_next"
+					onclick="showPage($('#page3'))">
+					<span>다음</span>
+				</button>
+			</p>
+			<br /> <br /> <br /> <input type="hidden" name="pageData"
+				id="pageData" value=""> </input>
+			<!-- history.back()용 data -->
+		</div>
+		<!-- /content -->
+
+	</div>
+
+	<!-- /견적페이지2--------------------------------------------------------------- -->
+
+
+
+	<!-- 견적페이지3--------------------------------------------------------------- -->
+
+	<div data-role="page" id="page3" class="pages">
+		<div data-role="content" id="sub_content">
+			<h2>견적결과정보</h2>
+
+
+			<!-- 운용리스 layout -->
+			<div id="B02OLayout">
+				<!-- 프로모션인 경우 추가 항목 -->
+				<h2 class="promotion_content proName"></h2>
+				<!-- //프로모션인 경우 추가 항목 -->
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="40%">
+							<col width="60%">
+						</colgroup>
+						<tbody class="tb_ok">
+							<tr>
+								<th scope="row" class="tb_rd">차종</th>
+								<td class="mdelName"></td>
+							</tr>
+							<tr>
+								<th scope="row">차량가</th>
+								<td class="carAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">등록세</th>
+								<td class="regtaxAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">취득세</th>
+								<td class="acqtaxAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">공채할인</th>
+								<td class="pubbondAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">부대비용</th>
+								<td class="extraChrgAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="tb_rdl">총구매비용</th>
+								<td class="totalAmt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="40%">
+							<col width="60%">
+						</colgroup>
+						<tbody class="tb_ok">
+							<tr>
+								<th scope="row" class="tb_rd">리스이용금액</th>
+								<td class="leasUtilAmt"></td>
+							</tr>
+							<tr class="advs_paid_amt_content">
+								<th scope="row">선납금</th>
+								<td class="advsPaidAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">보증금</th>
+								<td class="sdAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">기간</th>
+								<td class="term"></td>
+							</tr>
+							<tr>
+								<th scope="row">잔존가치</th>
+								<td class="pospAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="tb_rdl">초기납입금액 <br /> (인지대 포함)
+								</th>
+								<td class="prerelPayAmt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="inner_con clear car_tax_month_due_amt_content">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월리스료 <br /> (차세포함)
+							</th>
+							<td class="ta_r carTaxMonthDueAmt"></td>
+						</tbody>
+					</table>
+				</div>
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월리스료 <br /> (차세미포함)
+							</th>
+							<td class="ta_r monthDueAmt"></td>
+						</tbody>
+					</table>
+				</div>
+				<!-- 프로모션인 경우 추가 항목 -->
+				<div
+					class="inner_con clear promotion_content promotion_billing_content">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row" class="billingText"></th>
+							<!-- 청구면제금액 or s회~e회 -->
+							<td class="ta_r billing"></td>
+						</tbody>
+					</table>
+				</div>
+				<!-- //프로모션인 경우 추가 항목 -->
+			</div>
+			<!-- //운용리스 layout -->
+
+
+
+
+
+
+			<!-- 금융리스 layout -->
+			<div id="B02FLayout">
+				<!-- 프로모션인 경우 추가 항목 -->
+				<h2 class="promotion_content proName"></h2>
+				<!-- //프로모션인 경우 추가 항목 -->
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="40%">
+							<col width="60%">
+						</colgroup>
+						<tbody class="tb_ok">
+							<tr>
+								<th scope="row" class="tb_rd">차종</th>
+								<td class="mdelName"></td>
+							</tr>
+							<tr>
+								<th scope="row">차량가</th>
+								<td class="carAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">등록세</th>
+								<td class="regtaxAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">취득세</th>
+								<td class="acqtaxAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">공채할인</th>
+								<td class="pubbondAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">부대비용</th>
+								<td class="extraChrgAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="tb_rdl">총구매비용</th>
+								<td class="totalAmt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="40%">
+							<col width="60%">
+						</colgroup>
+						<tbody class="tb_ok">
+							<tr>
+								<th scope="row" class="tb_rd">이용금액</th>
+								<td class="leasUtilAmt"></td>
+							</tr>
+							<tr class="advs_paid_amt_content">
+								<th scope="row">선수금</th>
+								<td class="advsPaidAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">기간</th>
+								<td class="term"></td>
+							</tr>
+							<tr>
+								<th scope="row">유예금</th>
+								<td class="pospAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="tb_rdl">출고전납입금액 <br /> (인지대 포함)
+								</th>
+								<td class="prerelPayAmt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="inner_con clear car_tax_month_due_amt_content">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월리스료 <br /> (차세포함)
+							</th>
+							<td class="ta_r carTaxMonthDueAmt"></td>
+						</tbody>
+					</table>
+				</div>
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월리스료 <br /> (차세미포함)
+							</th>
+							<td class="ta_r monthDueAmt"></td>
+						</tbody>
+					</table>
+				</div>
+				<!-- 프로모션인 경우 추가 항목 -->
+				<div
+					class="inner_con clear promotion_content promotion_billing_content">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row" class="billingText"></th>
+							<!-- 청구면제금액 or s회~e회 -->
+							<td class="ta_r billing"></td>
+						</tbody>
+					</table>
+				</div>
+				<!-- //프로모션인 경우 추가 항목 -->
+			</div>
+			<!-- //금융리스 layout -->
+
+
+
+
+
+			<!-- 할부금융 layout -->
+			<div id="B02LLayout">
+				<!-- 프로모션인 경우 추가 항목 -->
+				<h2 class="promotion_content proName"></h2>
+				<!-- //프로모션인 경우 추가 항목 -->
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="40%">
+							<col width="60%">
+						</colgroup>
+						<tbody class="tb_ok">
+							<tr>
+								<th scope="row" class="tb_rd">차종</th>
+								<td class="mdelName"></td>
+							</tr>
+							<tr>
+								<th scope="row">차량가</th>
+								<td class="carAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">등록세</th>
+								<td class="regtaxAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">취득세</th>
+								<td class="acqtaxAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">공채할인</th>
+								<td class="pubbondAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">부대비용</th>
+								<td class="extraChrgAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="tb_rdl">총구매비용</th>
+								<td class="totalAmt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="inner_con">
+					<table width="100%" class="board_tb" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="40%">
+							<col width="60%">
+						</colgroup>
+						<tbody class="tb_ok">
+							<tr>
+								<th scope="row" class="tb_rd">이용금액</th>
+								<td class="leasUtilAmt"></td>
+							</tr>
+							<tr class="advs_paid_amt_content">
+								<th scope="row">선수금</th>
+								<td class="advsPaidAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row">기간</th>
+								<td class="term"></td>
+							</tr>
+							<tr>
+								<th scope="row">유예금</th>
+								<td class="pospAmt"></td>
+							</tr>
+							<tr>
+								<th scope="row" class="tb_rdl">출고전납입금액 <br /> (인지대 포함)
+								</th>
+								<td class="prerelPayAmt"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="inner_con clear">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row">월할부금</th>
+							<td class="ta_r monthDueAmt"></td>
+						</tbody>
+					</table>
+				</div>
+				<!-- 프로모션인 경우 추가 항목 -->
+				<div
+					class="inner_con clear promotion_content promotion_billing_content">
+					<table width="100%" class="board_tb2" cellpadding="0"
+						cellspacing="0">
+						<colgroup>
+							<col width="35%">
+							<col width="65%">
+						</colgroup>
+						<tbody>
+							<th scope="row" class="billingText"></th>
+							<!-- 청구면제금액 or s회~e회 -->
+							<td class="ta_r billing"></td>
+						</tbody>
+					</table>
+				</div>
+				<!-- //프로모션인 경우 추가 항목 -->
+			</div>
+			<!-- //할부금융 layout -->
+
+			<p class="clear ov_h">
+				<button class="bot_move_btn_left fl_l" id="btn_before"
+					onclick="showPage($('#page2'))">
+					<span>이전</span>
+				</button>
+				<button class="out_btn fl_r" id="btn_exit"
+					onclick="location.href='main.html'">
+					<span>종료</span>
+				</button>
+				<button class="save_btn fl_r" style="margin-right: .5em"
+					id="btn_save">
+					<span id="saveBtnText">저장</span>
+				</button>
+			</p>
+			<br /> <br /> <br />
+		</div>
+		<!-- /content -->
+
+	</div>
+	<!-- /page -->
+	<!-- /견적페이지3--------------------------------------------------------------- -->
+
+
+</body>
+</html>

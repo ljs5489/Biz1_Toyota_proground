@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!-- <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" /> -->
+<meta http-equiv="Cash-Control" content="no-cache" />
+<meta http-equiv="Pragma" content="no-cache" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/sub_estimate.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="myJs/common.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/common.css">
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+	<!-- 헤더메뉴  -->
+	<div data-role="header" id="sub_header">
+		<button type="button" class="list" id="btn_menu">
+			<img src="../images/btn/list.png">
+		</button>
+		<div class="menu_pop">
+			<ul id="menuContent">
+				<li class="menu01 btn_menu" value="1">
+					<button onclick="location.href='estimate.html'">
+						<img src="../images/btn/menu1.png"><span>견적생성</span>
+					</button>
+				</li>
+				<li class="menu02 btn_menu" value="2">
+					<button onclick="location.href='estimateView.html'">
+						<img src="../images/btn/menu2.png"> <span>견적조회</span>
+					</button>
+				</li>
+				<li class="menu03 btn_menu" value="3">
+					<button onclick="location.href='estimate.html'">
+						<img src="../images/btn/menu3.png"> <span>나의정보</span>
+					</button>
+				</li>
+				<li class="menu04 btn_menu" value="4">
+					<button onclick="location.href='statistic.html'">
+						<img src="../images/btn/menu4.png"> <span>통계관리</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+		<h1 class="title">설정</h1>
+	</div>
+	<!-- 헤더메뉴 끝 -->
+
+	<div data-role="page" id="sub_wrap">
+		<div data-role="content" id="sub_content">
+			<div class="inner_con f_mt">
+				<table width="100%" class="board_tb">
+					<colgroup>
+						<col width="40%">
+						<col width="60%">
+					</colgroup>
+					<tbody class="tb_ok">
+						<tr>
+							<th scope="row" class="tb_rd">어플리케이션 버전</th>
+							<td id="apkVer"></td>
+						</tr>
+						<tr>
+							<th scope="row" class="tb_rdl">콘텐츠 버전</th>
+							<td id="contentsVer"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<!-- /content -->
+
+		<!-- footer -->
+		<div id="footer"></div>
+
+
+		<div class="fix_b">
+			<div class="gnb">
+				<ul>
+					<li id="btn_goEstimateList"><a href="estimateView.html"> <img
+							src="../images/btn/g1.png" alt="견적조회">
+					</a></li>
+					<li id="btn_goMyInfo"><a> <img src="../images/btn/g2.png"
+							alt="나의정보">
+					</a></li>
+					<li id="btn_goStatistic"><a href="statistic.jsp"> <img
+							src="../images/btn/g3.png" alt="통계관리">
+					</a></li>
+				</ul>
+			</div>
+
+
+
+
+			<div class="appf">
+				<img src="toolbar/btn_menu1.png"
+					onclick="location.href='login.html'" /> <img
+					src="toolbar/btn_menu2.png" onclick="history.back()" /> <img
+					style="float: right;" src="toolbar/btn_menu4.png"
+					onclick="location.href='setting.html'" /> <img
+					style="float: right;" src="toolbar/btn_menu3.png" />
+			</div>
+
+		</div>
+
+		<!-- //footer -->
+	</div>
+	<!-- /page -->
+
+</body>
+</html>
