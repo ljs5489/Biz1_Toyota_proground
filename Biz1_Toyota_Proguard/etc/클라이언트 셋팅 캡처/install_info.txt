@@ -1,0 +1,14 @@
+
+
+[Eclipse adk plugin install]
+Name : ADT
+Location : https://dl-ssl.google.com/android/eclipse/
+
+
+
+[Aptana plugin install]
+http://www.aptana.com/
+1.
+Aptana 홈페이지에 접속하여 PRODUCTS(상단메뉴) > DOWNLOADS를 클릭한 후 Eclipse Plug-in Version을 선택하고 다운로드 버튼을 클릭
+2.
+다음 화면에서 나오는 url을 복사하여 eclipse에서 Help -> install new software -> Add -> Location에 입력한다.
