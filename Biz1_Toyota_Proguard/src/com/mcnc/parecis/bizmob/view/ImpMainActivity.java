@@ -182,7 +182,7 @@ public class ImpMainActivity extends MainActivity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		Toast.makeText(ImpMainActivity.this, "Okay, It is good!", Toast.LENGTH_SHORT).show();
 		
-		DB test = new DB();
+		//DB test = new DB();
 		
 		
 		return true;

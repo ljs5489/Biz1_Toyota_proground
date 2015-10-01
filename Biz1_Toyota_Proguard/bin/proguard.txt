@@ -1,75 +1,78 @@
-# view AndroidManifest.xml #generated:139
+# view AndroidManifest.xml #generated:138
 -keep class com.google.zxing.client.android.core.CaptureActivity { <init>(...); }
 
 # view res/layout/qrcode_capture.xml #generated:25
 -keep class com.google.zxing.client.android.core.ViewfinderView { <init>(...); }
 
-# view AndroidManifest.xml #generated:87
+# view AndroidManifest.xml #generated:86
 -keep class com.mcnc.hsmart.configuration.view.NetworkConfigurationActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:14
+# view AndroidManifest.xml #generated:13
 -keep class com.mcnc.hsmart.download.DownloadServiceImpl { <init>(...); }
 
-# view AndroidManifest.xml #generated:127
+# view AndroidManifest.xml #generated:126
 -keep class com.mcnc.hsmart.imageViewer.ImageViewer { <init>(...); }
 
-# view AndroidManifest.xml #generated:112
+# view AndroidManifest.xml #generated:111
 -keep class com.mcnc.hsmart.nativeApp.signature.SignatureActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:133
+# view AndroidManifest.xml #generated:132
 -keep class com.mcnc.hsmart.potal.DeviceRegistActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:21
+# view AndroidManifest.xml #generated:20
 -keep class com.mcnc.hsmart.upload.UploadServiceImpl { <init>(...); }
 
-# view AndroidManifest.xml #generated:194
+# view AndroidManifest.xml #generated:196
 -keep class com.mcnc.hsmart.util.SessionTimeoutReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:118
+# view AndroidManifest.xml #generated:117
 -keep class com.mcnc.hsmart.view.DownloadListActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:93
+# view AndroidManifest.xml #generated:92
 -keep class com.mcnc.hsmart.view.ImageViewActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:105
+# view AndroidManifest.xml #generated:104
 -keep class com.mcnc.hsmart.view.PopupViewActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:188
+# view AndroidManifest.xml #generated:190
 -keep class com.mcnc.parecis.bizmob.configuration.provider.LocalFileProviderImp { <init>(...); }
 
 # view AndroidManifest.xml #generated:7
 -keep class com.mcnc.parecis.bizmob.controller.ImpProcessController { <init>(...); }
 
-# view AndroidManifest.xml #generated:67
+# view AndroidManifest.xml #generated:66
 -keep class com.mcnc.parecis.bizmob.nativeView.browser.InternalBrowserActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:200
+# view AndroidManifest.xml #generated:202
 -keep class com.mcnc.parecis.bizmob.project.push.PushReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:40
+# view AndroidManifest.xml #generated:39
 -keep class com.mcnc.parecis.bizmob.view.DummyActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:38
+# view AndroidManifest.xml #generated:37
 -keep class com.mcnc.parecis.bizmob.view.ForegroundService { <init>(...); }
 
-# view AndroidManifest.xml #generated:54
+# view AndroidManifest.xml #generated:53
 -keep class com.mcnc.parecis.bizmob.view.ImpHomeActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:27
+# view AndroidManifest.xml #generated:26
 -keep class com.mcnc.parecis.bizmob.view.ImpLoginActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:61
+# view AndroidManifest.xml #generated:60
 -keep class com.mcnc.parecis.bizmob.view.ImpMainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:98
+# view AndroidManifest.xml #generated:97
 -keep class com.mcnc.parecis.bizmob.view.PopupViewActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:81
+# view AndroidManifest.xml #generated:80
 -keep class com.mcnc.parecis.bizmob.view.TabHomeActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:75
+# view AndroidManifest.xml #generated:74
 -keep class com.mcnc.parecis.bizmob.view.TabMainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:215
+# view AndroidManifest.xml #generated:225
+-keep class com.mcnc.parecis.toyota.PrintAgain { <init>(...); }
+
+# view AndroidManifest.xml #generated:217
 -keep class com.mcnc.parecis.toyota.PrintList { <init>(...); }
 

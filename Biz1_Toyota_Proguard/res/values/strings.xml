@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="ok">Okay!</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Print it</string>
@@ -207,5 +208,6 @@
     <string name="wifi_ssid_label">네트워크 이름</string>
     <string name="wifi_type_label">종류</string>
     <string name="title_activity_print_list">PrintList</string>
+    <string name="title_activity_print_again">PrintAgain</string>
 
 </resources>
