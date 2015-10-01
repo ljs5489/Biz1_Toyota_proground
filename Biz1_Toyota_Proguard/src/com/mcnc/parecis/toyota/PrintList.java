@@ -1,5 +1,7 @@
 package com.mcnc.parecis.toyota;
 
+import java.io.FileWriter;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -9,8 +11,6 @@ import com.mcnc.hsmart.wrapper.ImageWrappter;
 import com.mcnc.parecis.bizmob.def.Def;
 import com.mcnc.parecis.bizmob.view.ImpLoginActivity;
 import com.mcnc.parecis.bizmob.view.ImpMainActivity;
-import com.mcnc.parecis.toyota.PrintDialogActivity.PrintDialogJavaScriptInterface;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -18,6 +18,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.KeyEvent;
@@ -73,6 +74,33 @@ public class PrintList extends Activity {
 				// Show Alert
 				Toast.makeText(getApplicationContext(), "Position :" + itemPosition + "  ListItem : " + itemValue,
 						Toast.LENGTH_LONG).show();
+				
+				Intent PrintDialog = new Intent(getBaseContext(), PrintDialog.class);
+				
+				StringBuilder sb = new StringBuilder();
+			    sb.append("<html>");
+			    sb.append("<head>");
+			    sb.append("<title>Title Of the page");
+			    sb.append("</title>");
+			    sb.append("</head>");
+			    sb.append("<body> <b>Hello World</b>");
+			    sb.append("</body>");
+			    sb.append("</html>");
+			    try{
+			    	FileWriter fstream = new FileWriter("MyHtml.html");
+			    }
+			    catch(Exception e){
+			    	/*
+					Uri docUri = Uri.parse(fstream);
+					
+					PrintDialog.setDataAndType(docUri, "text/html");
+					*/
+					PrintDialog.putExtra("title", itemValue);
+					startActivity(PrintDialog);
+			    }
+			    				
+				
+
 			}
 
 		});

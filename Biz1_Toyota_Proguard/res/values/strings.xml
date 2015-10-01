@@ -209,5 +209,6 @@
     <string name="wifi_type_label">종류</string>
     <string name="title_activity_print_list">PrintList</string>
     <string name="title_activity_print_again">PrintAgain</string>
+    <string name="title_activity_print_dialog">PrintDIalog</string>
 
 </resources>

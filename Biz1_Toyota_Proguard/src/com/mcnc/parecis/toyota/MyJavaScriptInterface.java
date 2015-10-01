@@ -1,4 +1,4 @@
-/*
+
 package com.mcnc.parecis.toyota;
 
 import java.io.File;
@@ -30,14 +30,12 @@ public class MyJavaScriptInterface{
 	private Handler tempHandler;
 	private Context context;		
 	private String layoutService;
-	private MainActivity test;
 	
 	public MyJavaScriptInterface(WebView webView, Handler tempHandler, Context temp, String layoutService) {
 		this.webView = webView;
 		this.tempHandler=tempHandler;
 		this.context= temp;
 		this.layoutService=layoutService;
-		this.test=test;
 	}	
 
 
@@ -49,7 +47,7 @@ public class MyJavaScriptInterface{
 	}
 	@JavascriptInterface
 	public void test(){
-		Intent intent = new Intent(this.context,PrintDialogActivity.class);	
+		Intent intent = new Intent(this.context,PrintDialog.class);	
 	}
 	
 	@JavascriptInterface
@@ -71,4 +69,4 @@ public class MyJavaScriptInterface{
 		
 	}
 }
-*/
+

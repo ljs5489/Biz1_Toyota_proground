@@ -22,7 +22,7 @@
 # view AndroidManifest.xml #generated:20
 -keep class com.mcnc.hsmart.upload.UploadServiceImpl { <init>(...); }
 
-# view AndroidManifest.xml #generated:196
+# view AndroidManifest.xml #generated:199
 -keep class com.mcnc.hsmart.util.SessionTimeoutReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:117
@@ -34,7 +34,7 @@
 # view AndroidManifest.xml #generated:104
 -keep class com.mcnc.hsmart.view.PopupViewActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:190
+# view AndroidManifest.xml #generated:193
 -keep class com.mcnc.parecis.bizmob.configuration.provider.LocalFileProviderImp { <init>(...); }
 
 # view AndroidManifest.xml #generated:7
@@ -43,7 +43,7 @@
 # view AndroidManifest.xml #generated:66
 -keep class com.mcnc.parecis.bizmob.nativeView.browser.InternalBrowserActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:202
+# view AndroidManifest.xml #generated:205
 -keep class com.mcnc.parecis.bizmob.project.push.PushReceiver { <init>(...); }
 
 # view AndroidManifest.xml #generated:39
@@ -70,9 +70,12 @@
 # view AndroidManifest.xml #generated:74
 -keep class com.mcnc.parecis.bizmob.view.TabMainActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:225
+# view AndroidManifest.xml #generated:228
 -keep class com.mcnc.parecis.toyota.PrintAgain { <init>(...); }
 
-# view AndroidManifest.xml #generated:217
+# view AndroidManifest.xml #generated:236
+-keep class com.mcnc.parecis.toyota.PrintDialog { <init>(...); }
+
+# view AndroidManifest.xml #generated:220
 -keep class com.mcnc.parecis.toyota.PrintList { <init>(...); }
 
