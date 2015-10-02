@@ -1,9 +1,14 @@
 package com.mcnc.parecis.toyota;
 
+import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import com.mcnc.hsmart.core.log.Logger;
 import com.mcnc.hsmart.view.MainActivity;
@@ -14,12 +19,15 @@ import com.mcnc.parecis.bizmob.view.ImpMainActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.Display;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -41,6 +49,7 @@ import android.widget.Toast;
 public class PrintList extends Activity {
 
 	ListView listView;
+	String html="<html><head><h1>it is test</h1></head><body>hello world~~~~~~~~!</body></html>";
 
 	@Override
 	protected void onResume() {
@@ -62,50 +71,26 @@ public class PrintList extends Activity {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
 				android.R.id.text1, values);
 		listView.setAdapter(adapter);
-		// ListView Item Click Listener
 		listView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				int itemPosition = position;// ListView Clicked item index
-				String itemValue = (String) listView.getItemAtPosition(position);// ListView
-																					// Clicked
-																					// item
-																					// value
-				// Show Alert
-				Toast.makeText(getApplicationContext(), "Position :" + itemPosition + "  ListItem : " + itemValue,
-						Toast.LENGTH_LONG).show();
+				String itemValue = (String) listView.getItemAtPosition(position);				
+				Toast.makeText(getApplicationContext(), "Position :" + itemPosition + "  ListItem : " + itemValue,Toast.LENGTH_SHORT).show();
 				
-				Intent PrintDialog = new Intent(getBaseContext(), PrintDialog.class);
-				
-				StringBuilder sb = new StringBuilder();
-			    sb.append("<html>");
-			    sb.append("<head>");
-			    sb.append("<title>Title Of the page");
-			    sb.append("</title>");
-			    sb.append("</head>");
-			    sb.append("<body> <b>Hello World</b>");
-			    sb.append("</body>");
-			    sb.append("</html>");
-			    try{
-			    	FileWriter fstream = new FileWriter("MyHtml.html");
-			    }
-			    catch(Exception e){
-			    	/*
-					Uri docUri = Uri.parse(fstream);
-					
-					PrintDialog.setDataAndType(docUri, "text/html");
-					*/
-					PrintDialog.putExtra("title", itemValue);
-					startActivity(PrintDialog);
-			    }
-			    				
-				
+				Intent PrintDialog = new Intent(getBaseContext(), PrintDialog.class);				
+
+				PrintDialog.putExtra("title", itemValue);
+				PrintDialog.putExtra("content", html);
+				PrintDialog.setType("text/html"); //PrintDialog.setDataAndType(null,"text/html"); 대신 넣어줌
+				startActivity(PrintDialog);		
 
 			}
 
 		});
 	}
-
+	
+	
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 

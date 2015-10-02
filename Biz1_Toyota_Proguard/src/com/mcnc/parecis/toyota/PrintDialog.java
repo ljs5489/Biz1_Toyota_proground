@@ -12,11 +12,15 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 
 public class PrintDialog extends Activity {
 	private static final String PRINT_DIALOG_URL = "https://www.google.com/cloudprint/dialog.html";
@@ -85,17 +89,24 @@ public class PrintDialog extends Activity {
 			return cloudPrintIntent.getExtras().getString("title");
 		}
 
+		
+		public InputStream StringToIS(String text) throws Exception{
+			String str = text;
+			InputStream is = new ByteArrayInputStream(str.getBytes());
+			return is;
+		}
+	
 		@JavascriptInterface
-		public String getContent() {
-
-			logCat("getContent", "start!");
+		public String getContent() throws Exception {
+			logCat("getContent", "start!");	
+			
 			try {
 				ContentResolver contentResolver = getContentResolver();
-
 				logCat("getContent", "start2");
-
-				InputStream is = contentResolver.openInputStream(cloudPrintIntent.getData());
-
+				
+				//InputStream is = contentResolver.openInputStream(cloudPrintIntent.getData());				
+				InputStream is = StringToIS(cloudPrintIntent.getExtras().getString("content"));			
+				
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
 				byte[] buffer = new byte[4096];
@@ -109,6 +120,7 @@ public class PrintDialog extends Activity {
 				baos.flush();
 
 				return Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
+				
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -116,6 +128,7 @@ public class PrintDialog extends Activity {
 			}
 			logCat("getContent", "start4");
 			return "";
+			
 		}
 
 		@JavascriptInterface
