@@ -1,4 +1,4 @@
-
+/*
 package com.mcnc.parecis.toyota;
 
 import java.io.File;
@@ -69,4 +69,4 @@ public class MyJavaScriptInterface{
 		
 	}
 }
-
+*/

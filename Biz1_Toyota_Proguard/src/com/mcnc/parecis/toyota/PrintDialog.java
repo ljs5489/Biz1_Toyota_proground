@@ -105,8 +105,11 @@ public class PrintDialog extends Activity {
 				logCat("getContent", "start2");
 				
 				//InputStream is = contentResolver.openInputStream(cloudPrintIntent.getData());				
-				InputStream is = StringToIS(cloudPrintIntent.getExtras().getString("content"));			
+				InputStream is = StringToIS(cloudPrintIntent.getExtras().getString("content"));		
+				//여기가 핵심임.
 				
+				
+				//---------------PDF만드는 곳----------------------
 				ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
 				byte[] buffer = new byte[4096];
@@ -120,6 +123,7 @@ public class PrintDialog extends Activity {
 				baos.flush();
 
 				return Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT);
+				//-------------------------------------------------
 				
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();

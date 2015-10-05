@@ -49,7 +49,7 @@ import android.widget.Toast;
 public class PrintList extends Activity {
 
 	ListView listView;
-	String html="<html><head><h1>it is test</h1></head><body>hello world~~~~~~~~!</body></html>";
+	String html=MakeHtml.getHtml();
 
 	@Override
 	protected void onResume() {
@@ -84,9 +84,7 @@ public class PrintList extends Activity {
 				PrintDialog.putExtra("content", html);
 				PrintDialog.setType("text/html"); //PrintDialog.setDataAndType(null,"text/html"); 대신 넣어줌
 				startActivity(PrintDialog);		
-
 			}
-
 		});
 	}
 	
